@@ -1,0 +1,45 @@
+//
+// S7-Project-Explorer - GUI for browsing variables in Siemens STEP 7 projects and exporting the list
+// Copyright (c) 2022 Colin Finck, ENLYZE GmbH <c.finck@enlyze.com>
+// SPDX-License-Identifier: MIT
+//
+
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+
+STRINGTABLE
+BEGIN
+    IDS_BACK                        "< Zurück"
+    IDS_NEXT                        "Weiter >"
+    IDS_CANCEL                      "Abbrechen"
+    IDS_SAVE                        "Speichern..."
+    IDS_FINISH                      "Fertig stellen"
+
+    IDS_FILEPAGE_HEADER             "Willkommen"
+    IDS_FILEPAGE_SUBHEADER          "Wählen Sie eine Projektdatei."
+    IDS_FILEPAGE_TEXT               "Der ENLYZE S7-Project-Explorer ermöglicht Ihnen, alle Variablen aus einem STEP 7-Projekt (.s7p-Datei) anzuzeigen und die Liste in eine .csv-Datei zu exportieren.\n\nBitte wählen Sie zunächst eine Projektdatei und klicken dann auf „Weiter“."
+    IDS_BROWSE                      "Durchsuchen..."
+    IDS_BROWSE_FILTER               "STEP 7-Projektdateien (*.s7p)|*.s7p||"
+    IDS_BROWSE_TITLE                "Wählen Sie eine STEP 7-Projektdatei"
+    IDS_PARSE_ERROR                 "Das ausgewählte STEP 7-Projekt konnte nicht verarbeitet werden.\n\nTechnische Informationen:\n"
+    IDS_NO_VARIABLES                "Das ausgewählte STEP 7-Projekt enthält keine Variablen."
+
+    IDS_VARIABLESPAGE_HEADER        "Variablen"
+    IDS_VARIABLESPAGE_SUBHEADER     "Blättern durch alle Variablen."
+    IDS_VARIABLESPAGE_TEXT          "Die folgenden S7-Geräte und Variablen wurden in diesem Projekt gefunden. Klicken Sie auf „Speichern“, um diese Liste in eine Datei zu exportieren."
+    IDS_NAME                        "Name"
+    IDS_CODE                        "Code"
+    IDS_DATATYPE                    "Datentyp"
+    IDS_COMMENT                     "Kommentar"
+    IDS_SAVE_FILTER                 "CSV-Dateien (*.csv)|*.csv||"
+    IDS_SAVE_TITLE                  "Exportieren der Variablenliste in eine Datei"
+    IDS_SAVE_ERROR                  "Die Variablenliste konnte nicht in eine Datei exportiert werden.\n\nTechnische Informationen:\n"
+
+    IDS_FINISHPAGE_HEADER           "Fertigstellen"
+    IDS_FINISHPAGE_SUBHEADER        "Fertigstellen des Assistenten."
+    IDS_FINISHPAGE_TEXT             "Die Variablenliste wurde erfolgreich exportiert.\n\nKlicken Sie auf „Fertig stellen“, um das Programm zu beenden."
+
+    IDS_WARNINGS                    "Warnungen"
+    IDS_DEVICE                      "Gerät"
+    IDS_WARNING                     "Warnung"
+    IDS_CLOSE                       "Schließen"
+END

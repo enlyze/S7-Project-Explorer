@@ -1,0 +1,45 @@
+//
+// S7-Project-Explorer - GUI for browsing variables in Siemens STEP 7 projects and exporting the list
+// Copyright (c) 2022 Colin Finck, ENLYZE GmbH <c.finck@enlyze.com>
+// SPDX-License-Identifier: MIT
+//
+
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+
+STRINGTABLE
+BEGIN
+    IDS_BACK                        "< Back"
+    IDS_NEXT                        "Next >"
+    IDS_CANCEL                      "Cancel"
+    IDS_SAVE                        "Save..."
+    IDS_FINISH                      "Finish"
+
+    IDS_FILEPAGE_HEADER             "Welcome"
+    IDS_FILEPAGE_SUBHEADER          "Select a project file."
+    IDS_FILEPAGE_TEXT               "The ENLYZE S7-Project-Explorer enables you to browse all variables of a STEP 7 project (.s7p file) and export the list into a single .csv file.\n\nPlease select a project file first, then click “Next”."
+    IDS_BROWSE                      "Browse..."
+    IDS_BROWSE_FILTER               "STEP 7 Project Files (*.s7p)|*.s7p||"
+    IDS_BROWSE_TITLE                "Select a STEP 7 project file"
+    IDS_PARSE_ERROR                 "The selected STEP 7 project could not be processed.\n\nTechnical information:\n"
+    IDS_NO_VARIABLES                "The selected STEP 7 project does not contain any variables."
+
+    IDS_VARIABLESPAGE_HEADER        "Variables"
+    IDS_VARIABLESPAGE_SUBHEADER     "Browse through all variables."
+    IDS_VARIABLESPAGE_TEXT          "The following S7 devices and variables have been found in this project. Click “Save” to export this list into a file."
+    IDS_NAME                        "Name"
+    IDS_CODE                        "Code"
+    IDS_DATATYPE                    "Datatype"
+    IDS_COMMENT                     "Comment"
+    IDS_SAVE_FILTER                 "CSV Files (*.csv)|*.csv||"
+    IDS_SAVE_TITLE                  "Export the variable list into a file"
+    IDS_SAVE_ERROR                  "The variable list could not be exported into a file.\n\nTechnical information:\n"
+
+    IDS_FINISHPAGE_HEADER           "Finish"
+    IDS_FINISHPAGE_SUBHEADER        "Finish the wizard."
+    IDS_FINISHPAGE_TEXT             "The variable list has been exported successfully.\n\nClick “Finish” to exit this program."
+
+    IDS_WARNINGS                    "Warnings"
+    IDS_DEVICE                      "Device"
+    IDS_WARNING                     "Warning"
+    IDS_CLOSE                       "Close"
+END

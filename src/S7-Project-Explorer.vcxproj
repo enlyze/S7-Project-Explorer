@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{B5EBA992-C161-435C-BD28-24DBE19234C3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>S7ProjectExplorer</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>ClangCL</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\..\build\$(Configuration)\$(ProjectName)\bin\</OutDir>
+    <IntDir>$(SolutionDir)\..\build\$(Configuration)\$(ProjectName)\obj\</IntDir>
+    <TargetName>S7-Project-Explorer</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)\..\build\$(Configuration)\$(ProjectName)\obj\</IntDir>
+    <OutDir>$(SolutionDir)\..\build\$(Configuration)\$(ProjectName)\bin\</OutDir>
+    <TargetName>S7-Project-Explorer</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>$(SolutionDir)\EnlyzeS7PLib\src;$(SolutionDir)\EnlyzeWinCompatLib\src\libcxx\include;$(SolutionDir)\scope-guard\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>
+      </AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)\..\build\$(Configuration)\EnlyzeWinCompatLib\bin\EnlyzeWinCompatLib.lib;$(SolutionDir)\..\build\$(Configuration)\libc++\bin\libc++.lib;$(SolutionDir)\..\build\$(Configuration)\winpthreads\bin\winpthreads.lib;comctl32.lib;gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+    <Manifest />
+    <Manifest>
+      <AdditionalManifestFiles>
+      </AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>$(SolutionDir)\EnlyzeS7PLib\src;$(SolutionDir)\EnlyzeWinCompatLib\src\libcxx\include;$(SolutionDir)\scope-guard\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>-flto -march=pentium-mmx</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>$(SolutionDir)\..\build\$(Configuration)\EnlyzeWinCompatLib\bin\EnlyzeWinCompatLib.lib;$(SolutionDir)\..\build\$(Configuration)\libc++\bin\libc++.lib;$(SolutionDir)\..\build\$(Configuration)\winpthreads\bin\winpthreads.lib;comctl32.lib;gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+    <Manifest />
+    <Manifest>
+      <AdditionalManifestFiles>
+      </AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CFilePage.cpp" />
+    <ClCompile Include="CFinishPage.cpp" />
+    <ClCompile Include="CMainWindow.cpp" />
+    <ClCompile Include="CWarningsWindow.cpp" />
+    <ClCompile Include="csv_exporter.cpp" />
+    <ClCompile Include="CVariablesPage.cpp" />
+    <ClCompile Include="S7-Project-Explorer.cpp" />
+    <ClCompile Include="utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CFilePage.h" />
+    <ClInclude Include="CFinishPage.h" />
+    <ClInclude Include="CMainWindow.h" />
+    <ClInclude Include="CPage.h" />
+    <ClInclude Include="CVariablesPage.h" />
+    <ClInclude Include="CWarningsWindow.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="S7-Project-Explorer.h" />
+    <ClInclude Include="csv_exporter.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="utils.h" />
+    <ClInclude Include="version.h" />
+    <ClInclude Include="win32_wrappers.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="lang\de-DE.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+    <ResourceCompile Include="lang\en-US.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+    <ResourceCompile Include="S7-Project-Explorer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\enlyze-s7.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="Compatibility.manifest" />
+    <Manifest Include="PerMonitorV2.manifest" />
+    <Manifest Include="VisualStyles.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="EnlyzeS7PLib\src\EnlyzeS7PLib.vcxproj">
+      <Project>{06b41ad5-3d7e-4c9d-8dfb-e53d8fc52723}</Project>
+    </ProjectReference>
+    <ProjectReference Include="EnlyzeWinCompatLib\src\EnlyzeWinCompatLib.vcxproj">
+      <Project>{c2c396b8-b585-4f0d-bd37-cf6d4347140f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="EnlyzeWinCompatLib\src\libcxx\src\libc++.vcxproj">
+      <Project>{cf14a29c-e25e-4faf-8c98-2f5006800132}</Project>
+    </ProjectReference>
+    <ProjectReference Include="EnlyzeWinCompatLib\src\libcxx\src\winpthreads\src\winpthreads.vcxproj">
+      <Project>{d3faca21-d165-4b1e-9a06-a9b58964886c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="EnlyzeWinStringLib\src\EnlyzeWinStringLib.vcxproj">
+      <Project>{95d0b318-d75c-4fa5-85a4-2a36835bf518}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

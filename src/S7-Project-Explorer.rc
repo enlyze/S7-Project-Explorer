@@ -1,0 +1,61 @@
+//
+// S7-Project-Explorer - GUI for browsing variables in Siemens STEP 7 projects and exporting the list
+// Copyright (c) 2022 Colin Finck, ENLYZE GmbH <c.finck@enlyze.com>
+// SPDX-License-Identifier: MIT
+//
+
+#pragma code_page(65001)
+
+#include "targetver.h"
+#include <Windows.h>
+
+#include "resource.h"
+#include "version.h"
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+
+// Icon
+IDI_ICON                ICON                    "res\\enlyze-s7.ico"
+
+// PNG
+IDP_LOGO                PNG                     "res\\enlyze-logo.png"
+IDP_BLANK_FILE          PNG                     "res\\blank-file.png"
+IDP_S7P_FILE            PNG                     "res\\s7p-file.png"
+
+// Version
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION APP_MAJOR_VERSION,APP_MINOR_VERSION,0,0
+ PRODUCTVERSION APP_MAJOR_VERSION,APP_MINOR_VERSION,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "ENLYZE GmbH"
+            VALUE "FileDescription", "S7-Project-Explorer"
+            VALUE "FileVersion", APP_VERSION_COMBINED
+            VALUE "InternalName", "S7-Project-Explorer.exe"
+            VALUE "LegalCopyright", "Copyright © 2020-2022 ENLYZE GmbH"
+            VALUE "OriginalFilename", "S7-Project-Explorer.exe"
+            VALUE "ProductName", "S7-Project-Explorer"
+            VALUE "ProductVersion", APP_VERSION_COMBINED
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+// Localized resources
+#include "lang/de-DE.rc"
+#include "lang/en-US.rc"

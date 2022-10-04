@@ -1,0 +1,12 @@
+[submodule "src/scope-guard"]
+	path = src/scope-guard
+	url = https://github.com/enlyze/scope-guard.git
+[submodule "src/EnlyzeWinCompatLib"]
+	path = src/EnlyzeWinCompatLib
+	url = https://github.com/enlyze/EnlyzeWinCompatLib.git
+[submodule "src/EnlyzeWinStringLib"]
+	path = src/EnlyzeWinStringLib
+	url = https://github.com/enlyze/EnlyzeWinStringLib.git
+[submodule "src/EnlyzeDbfLib"]
+	path = src/EnlyzeDbfLib
+	url = https://github.com/enlyze/EnlyzeDbfLib.git
