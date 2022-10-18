@@ -24,7 +24,7 @@ static bool
 _FileExists(const std::wstring& wstrFilePath)
 {
     // libc++'s std::filesystem doesn't build for Windows yet, so we have to use this inefficient approach :(
-    std::ifstream f(wstrFilePath);
+    std::ifstream f(wstrFilePath.c_str());
     return f.good();
 }
 
@@ -323,7 +323,7 @@ _ParseResoffAndLinkhrs(std::vector<S7DeviceIdInfo>& DeviceIdInfos, const std::ws
 
     // Open the linkhrs.lnk file.
     std::wstring wstrLinkhrsFilePath = wstrS7PFolderPath + L"\\hrs\\linkhrs.lnk";
-    std::ifstream Linkhrs(wstrLinkhrsFilePath, std::ios::binary);
+    std::ifstream Linkhrs(wstrLinkhrsFilePath.c_str(), std::ios::binary);
     if (!Linkhrs)
     {
         return CS7PError(L"Could not open linkhrs.lnk");
