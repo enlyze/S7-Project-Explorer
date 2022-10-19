@@ -13,7 +13,7 @@ const int iUnifiedControlPadding = 10;
 const int iUnifiedButtonHeight = 23;
 const int iUnifiedButtonWidth = 100;
 
-const WCHAR wszAppName[] = L"ENLYZE S7-Project-Explorer";
+const WCHAR wszAppName[] = L"ENLYZE S7-Project-Explorer " APP_VERSION_WSTRING;
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR lpCmdLine, int nShowCmd)
 {

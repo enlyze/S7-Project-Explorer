@@ -7,9 +7,17 @@
 #pragma once
 
 #define APP_MAJOR_VERSION       2
-#define APP_MINOR_VERSION       0
+#define APP_MINOR_VERSION       1
 
-#define APP_VERSION_STRING      "2.0"
+
+// The following macro magic turns arbitrary preprocessor constants into strings.
+#define STRINGIFY_INTERNAL(x)   #x
+#define STRINGIFY(x)            STRINGIFY_INTERNAL(x)
+#define WSTRINGIFY_INTERNAL(x)  L##x
+#define WSTRINGIFY(x)           WSTRINGIFY_INTERNAL(x)
+
+#define APP_VERSION_STRING      STRINGIFY(APP_MAJOR_VERSION) "." STRINGIFY(APP_MINOR_VERSION)
+#define APP_VERSION_WSTRING     WSTRINGIFY(APP_VERSION_STRING)
 
 #define APP_REVISION_STRING     "unknown revision"
 
