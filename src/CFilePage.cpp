@@ -189,8 +189,9 @@ CFilePage::_OnSize()
     RECT rcWindow;
     GetClientRect(m_hWnd, &rcWindow);
 
-    // The text is drawn on most of the window, so invalidate that.
+    // Invalidate all areas with text.
     InvalidateRect(m_hWnd, &rcWindow, FALSE);
+    InvalidateRect(m_hFileName, nullptr, FALSE);
 
     // Move the file icon.
     HDWP hDwp = BeginDeferWindowPos(3);

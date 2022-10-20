@@ -259,9 +259,7 @@ CMainWindow::_OnDpiChanged(WPARAM wParam, LPARAM lParam)
     m_wCurrentDPI = LOWORD(wParam);
 
     // Redraw the entire window on every DPI change.
-    RECT rcWindow;
-    GetClientRect(m_hWnd, &rcWindow);
-    InvalidateRect(m_hWnd, &rcWindow, FALSE);
+    InvalidateRect(m_hWnd, nullptr, FALSE);
 
     // Recalculate the main GUI font.
     m_lfGuiFont.lfHeight = -ScaleFont(10);
