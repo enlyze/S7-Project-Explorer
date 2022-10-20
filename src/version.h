@@ -7,7 +7,7 @@
 #pragma once
 
 #define APP_MAJOR_VERSION       2
-#define APP_MINOR_VERSION       1
+#define APP_MINOR_VERSION       2
 
 
 // The following macro magic turns arbitrary preprocessor constants into strings.
