@@ -1,13 +1,13 @@
 //
 // S7-Project-Explorer - GUI for browsing variables in Siemens STEP 7 projects and exporting the list
-// Copyright (c) 2022 Colin Finck, ENLYZE GmbH <c.finck@enlyze.com>
+// Copyright (c) 2022-2023 Colin Finck, ENLYZE GmbH <c.finck@enlyze.com>
 // SPDX-License-Identifier: MIT
 //
 
 #pragma once
 
 #define APP_MAJOR_VERSION       2
-#define APP_MINOR_VERSION       2
+#define APP_MINOR_VERSION       3
 
 
 // The following macro magic turns arbitrary preprocessor constants into strings.

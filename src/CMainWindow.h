@@ -1,6 +1,6 @@
 //
 // S7-Project-Explorer - GUI for browsing variables in Siemens STEP 7 projects and exporting the list
-// Copyright (c) 2022 Colin Finck, ENLYZE GmbH <c.finck@enlyze.com>
+// Copyright (c) 2022-2023 Colin Finck, ENLYZE GmbH <c.finck@enlyze.com>
 // SPDX-License-Identifier: MIT
 //
 
@@ -28,6 +28,7 @@ public:
 private:
     static constexpr WCHAR _wszWndClass[] = L"MainWndClass";
 
+    HBITMAP m_hLogoBitmap;
     sr::unique_resource<HFONT, decltype(DeleteObject)*> m_hBoldGuiFont;
     sr::unique_resource<HFONT, decltype(DeleteObject)*> m_hGuiFont;
     HINSTANCE m_hInstance;
@@ -46,7 +47,6 @@ private:
     std::unique_ptr<CVariablesPage> m_pVariablesPage;
     std::unique_ptr<CFinishPage> m_pFinishPage;
     std::unique_ptr<CWarningsWindow> m_pWarningsWindow;
-    std::unique_ptr<Gdiplus::Bitmap> m_pLogoBitmap;
     std::wstring m_wstrSelectedFilePath;
     std::wstring m_wstrSaveFilter;
     std::wstring m_wstrSaveTitle;

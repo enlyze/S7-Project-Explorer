@@ -1,6 +1,6 @@
 //
 // S7-Project-Explorer - GUI for browsing variables in Siemens STEP 7 projects and exporting the list
-// Copyright (c) 2022 Colin Finck, ENLYZE GmbH <c.finck@enlyze.com>
+// Copyright (c) 2022-2023 Colin Finck, ENLYZE GmbH <c.finck@enlyze.com>
 // SPDX-License-Identifier: MIT
 //
 
@@ -190,7 +190,7 @@ CMainWindow::_OnCreate()
     m_wCurrentDPI = GetWindowDPI(m_hWnd);
 
     // Load resources.
-    m_pLogoBitmap = LoadPNGAsGdiplusBitmap(m_hInstance, IDP_LOGO);
+    m_hLogoBitmap = LoadBitmapW(m_hInstance, MAKEINTRESOURCEW(IDB_LOGO));
     m_wstrSaveFilter = LoadStringAsWstr(m_hInstance, IDS_SAVE_FILTER);
     m_wstrSaveTitle = LoadStringAsWstr(m_hInstance, IDS_SAVE_TITLE);
 
@@ -339,14 +339,23 @@ CMainWindow::_OnPaint()
     DrawTextW(hMemDC, m_pwstrSubHeader->c_str(), m_pwstrSubHeader->size(), &rcSubHeaderText, 0);
 
     // Draw the ENLYZE logo into the upper right corner.
-    const int iLogoPadding = ScaleControl(5);
+    BITMAP bmLogo;
+    GetObject(m_hLogoBitmap, sizeof(BITMAP), &bmLogo);
+
+    const int iLogoPadding = ScaleControl(iUnifiedControlPadding);
     int iDestBitmapHeight = rcHeader.bottom - 2 * iLogoPadding;
-    int iDestBitmapWidth = m_pLogoBitmap->GetWidth() * iDestBitmapHeight / m_pLogoBitmap->GetHeight();
+    int iDestBitmapWidth = bmLogo.bmWidth * iDestBitmapHeight / bmLogo.bmHeight;
     int iDestBitmapX = rcWindow.right - iLogoPadding - iDestBitmapWidth;
     int iDestBitmapY = iLogoPadding;
 
-    Gdiplus::Graphics g(hMemDC);
-    g.DrawImage(m_pLogoBitmap.get(), iDestBitmapX, iDestBitmapY, iDestBitmapWidth, iDestBitmapHeight);
+    HDC hBitmapDC = CreateCompatibleDC(hDC);
+    SelectObject(hBitmapDC, m_hLogoBitmap);
+
+    SetStretchBltMode(hMemDC, HALFTONE);
+    SetBrushOrgEx(hMemDC, 0, 0, nullptr);
+    StretchBlt(hMemDC, iDestBitmapX, iDestBitmapY, iDestBitmapWidth, iDestBitmapHeight, hBitmapDC, 0, 0, bmLogo.bmWidth, bmLogo.bmHeight, SRCCOPY);
+
+    DeleteDC(hBitmapDC);
 
     // Fill the rest of the window with the window background color.
     RECT rcBackground = rcWindow;

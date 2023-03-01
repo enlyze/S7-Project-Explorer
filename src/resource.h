@@ -1,6 +1,6 @@
 //
 // S7-Project-Explorer - GUI for browsing variables in Siemens STEP 7 projects and exporting the list
-// Copyright (c) 2022 Colin Finck, ENLYZE GmbH <c.finck@enlyze.com>
+// Copyright (c) 2022-2023 Colin Finck, ENLYZE GmbH <c.finck@enlyze.com>
 // SPDX-License-Identifier: MIT
 //
 
@@ -8,7 +8,8 @@
 
 #define IDI_ICON                        1
 
-#define IDP_LOGO                        100
+#define IDB_LOGO                        100
+
 #define IDP_BLANK_FILE                  101
 #define IDP_S7P_FILE                    102
 
