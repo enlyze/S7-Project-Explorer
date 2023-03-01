@@ -1,6 +1,6 @@
 //
 // S7-Project-Explorer - GUI for browsing variables in Siemens STEP 7 projects and exporting the list
-// Copyright (c) 2022 Colin Finck, ENLYZE GmbH <c.finck@enlyze.com>
+// Copyright (c) 2022-2023 Colin Finck, ENLYZE GmbH <c.finck@enlyze.com>
 // SPDX-License-Identifier: MIT
 //
 
@@ -17,8 +17,10 @@ LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
 // Icon
 IDI_ICON                ICON                    "res\\enlyze-s7.ico"
 
+// Bitmap
+IDB_LOGO                BITMAP                  "res\\enlyze-logo.bmp"
+
 // PNG
-IDP_LOGO                PNG                     "res\\enlyze-logo.png"
 IDP_BLANK_FILE          PNG                     "res\\blank-file.png"
 IDP_S7P_FILE            PNG                     "res\\s7p-file.png"
 
@@ -44,7 +46,7 @@ BEGIN
             VALUE "FileDescription", "S7-Project-Explorer"
             VALUE "FileVersion", APP_VERSION_COMBINED
             VALUE "InternalName", "S7-Project-Explorer.exe"
-            VALUE "LegalCopyright", "Copyright © 2020-2022 ENLYZE GmbH"
+            VALUE "LegalCopyright", "Copyright © 2020-2023 ENLYZE GmbH"
             VALUE "OriginalFilename", "S7-Project-Explorer.exe"
             VALUE "ProductName", "S7-Project-Explorer"
             VALUE "ProductVersion", APP_VERSION_COMBINED
