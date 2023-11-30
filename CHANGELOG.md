@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 
+## [2.4] - 2023-11-30
+- Added a Byte Order Mark (BOM) when writing a CSV file to fix special characters when opening the resulting file in Excel (#4, #5)
+
 ## [2.3] - 2023-03-01
 - Updated graphics to new ENLYZE Corporate Identity (#3)
 
