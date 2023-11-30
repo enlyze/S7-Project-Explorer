@@ -60,11 +60,18 @@ ExportCSV(const std::wstring& wstrCSVFilePath, const std::vector<S7DeviceSymbolI
         return CS7PError(L"CreateFileW failed with error " + std::to_wstring(GetLastError()));
     }
 
-    // Write the CSV output.
+    // Write the BOM to indicate UTF-8 output.
+    const unsigned char ByteOrderMark[] = { 0xEF, 0xBB, 0xBF };
     DWORD cbWritten;
+    if (!WriteFile(hFile.get(), ByteOrderMark, sizeof(ByteOrderMark), &cbWritten, nullptr))
+    {
+        return CS7PError(L"WriteFile failed for the ByteOrderMark with error " + std::to_wstring(GetLastError()));
+    }
+
+    // Write the CSV output.
     if (!WriteFile(hFile.get(), strCSV.c_str(), strCSV.size(), &cbWritten, nullptr))
     {
-        return CS7PError(L"WriteFile failed with error " + std::to_wstring(GetLastError()));
+        return CS7PError(L"WriteFile failed for the CSV content with error " + std::to_wstring(GetLastError()));
     }
 
     return std::monostate();
