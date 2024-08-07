@@ -13,6 +13,11 @@ Runs on Windows XP or any later Windows version.
 <a href="img/step2.png"><img src="img/step2.png" width="32%" alt="S7-Project-Explorer GUI Step 2: Browse through all variables"></a>
 <a href="img/step3.png"><img src="img/step3.png" width="32%" alt="S7-Project-Explorer GUI Step 3: Finish the wizard"></a>
 
+## Usage
+
+You need to have access to the S7 Project structure, the top level will have a file ending in `.s7p` next to a number of other files and directories. The project explorer
+needs to open files from a number of directories, so having just the `.s7p` file alone is not enough.
+
 ## Download
 Check the [Releases](https://github.com/enlyze/S7-Project-Explorer/releases) page to download the latest version of the S7-Project-Explorer.
 
