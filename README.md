@@ -108,4 +108,6 @@ This obviates the need for putting each cell in quotation marks or escaping any 
 This way, importing the created file should also be possible using any CSV engine.
 
 ## Contact
-Colin Finck ([c.finck@enlyze.com](mailto:c.finck@enlyze.com))
+Deniz Saner ([d.saner@enlyze.com](mailto:d.saner@enlyze.com))
+
+All credits go to Colin Finck ([c.finck@enlyze.com](mailto:c.finck@enlyze.com))
